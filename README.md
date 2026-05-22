@@ -50,3 +50,37 @@ project/
 └── grafana/
     └── provisioning/
 ```
+
+## 4. Запуск и проверки
+```text
+docker compose up -d
+```
+<img width="1944" height="204" alt="image" src="https://github.com/user-attachments/assets/b37a9686-6fc7-4e13-98c5-a0fb4e38ad95" />
+
+```text
+Health endpoint
+curl http://localhost:8000/health
+```
+<img width="1039" height="99" alt="image" src="https://github.com/user-attachments/assets/cc5230fa-25f3-4d18-8e45-404559ac3a71" />
+
+```text
+Predict endpoint
+Invoke-RestMethod `
+  -Uri "http://localhost:8000/predict" `
+  -Method POST `
+  -ContentType "application/json" `
+  -Body '{"x":[1,2,3]}'
+```
+  <img width="523" height="84" alt="image" src="https://github.com/user-attachments/assets/ed509f97-5c3e-4328-bbf1-b74ceca7cdeb" />
+
+```text
+metrics
+curl http://localhost:8000/metrics
+```
+<img width="1158" height="197" alt="image" src="https://github.com/user-attachments/assets/74c81c4b-b12a-4969-9828-3f9a00db953f" />
+
+```text
+Prometheus
+http://localhost:9090/api/v1/targets
+```
+<img width="1928" height="330" alt="image" src="https://github.com/user-attachments/assets/7d1dfbe7-d796-48e2-b5ae-724d60318462" />
