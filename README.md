@@ -101,7 +101,7 @@ http://localhost:9090/api/v1/targets
 <img width="1090" height="248" alt="image" src="https://github.com/user-attachments/assets/77631fa8-44b2-42b1-b54c-ee97c603326d" />
 
 ---
-
+## 5. Скриншоты Grafana и Prometheus
 ```text
 Grafana Dashboard
 ```
