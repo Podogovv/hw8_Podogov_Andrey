@@ -57,11 +57,15 @@ docker compose up -d
 ```
 <img width="1944" height="204" alt="image" src="https://github.com/user-attachments/assets/b37a9686-6fc7-4e13-98c5-a0fb4e38ad95" />
 
+---
+
 ```text
 Health endpoint
 curl http://localhost:8000/health
 ```
 <img width="1039" height="99" alt="image" src="https://github.com/user-attachments/assets/cc5230fa-25f3-4d18-8e45-404559ac3a71" />
+
+---
 
 ```text
 Predict endpoint
@@ -73,14 +77,47 @@ Invoke-RestMethod `
 ```
   <img width="523" height="84" alt="image" src="https://github.com/user-attachments/assets/ed509f97-5c3e-4328-bbf1-b74ceca7cdeb" />
 
+---
+
 ```text
 metrics
 curl http://localhost:8000/metrics
 ```
 <img width="1158" height="197" alt="image" src="https://github.com/user-attachments/assets/74c81c4b-b12a-4969-9828-3f9a00db953f" />
 
+---
+
 ```text
 Prometheus
 http://localhost:9090/api/v1/targets
 ```
 <img width="1928" height="330" alt="image" src="https://github.com/user-attachments/assets/7d1dfbe7-d796-48e2-b5ae-724d60318462" />
+
+---
+
+```text
+Генерируем трафик
+```
+<img width="1090" height="248" alt="image" src="https://github.com/user-attachments/assets/77631fa8-44b2-42b1-b54c-ee97c603326d" />
+
+---
+
+```text
+Grafana Dashboard
+```
+<img width="3228" height="1265" alt="image" src="https://github.com/user-attachments/assets/63ee952c-d207-4e0c-89fd-b162f2af8805" />
+
+---
+
+```text
+Prometheus
+```
+<img width="1751" height="561" alt="image" src="https://github.com/user-attachments/assets/a279a996-85d7-42bf-928f-83ad9871b6d3" />
+---
+
+```text
+Alert
+```
+<img width="3808" height="1471" alt="alert" src="https://github.com/user-attachments/assets/37c281f2-d956-4055-bc27-ac5b4905f01a" />
+
+
