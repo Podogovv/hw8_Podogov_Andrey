@@ -1,4 +1,4 @@
-* 1 Определить ключевые бизнес- и технические метрики для ML-системы
+## 1. Определить ключевые бизнес- и технические метрики для ML-системы
 
 Для ML-системы онлайн-кинотеатра было выделено четыре основные ветви дерева метрик: бизнес-метрики, метрики приложения, ML-метрики и инфраструктурные метрики. Ветвь бизнес-метрик отражает цели компании и позволяет оценивать влияние ML-системы на продуктовые показатели. В нее входят такие показатели, как рост выручки (Revenue uplift), CTR, Conversion Rate, ARPU, Retention Rate, доступность сервиса и latency p95/p99, поскольку рекомендации напрямую влияют на вовлеченность пользователей и монетизацию платформы.
 
@@ -26,3 +26,27 @@
 • Availability         • Deploy success        • Inference latency      • p95 latency
 ```
 
+## 2. SLO
+```text
+| Метрика     | SLI                            | SLO                | Alert                                            |
+|-------------|--------------------------------|--------------------|--------------------------------------------------|
+| Latency     | histogram_quantile(0.95, ...)  | p95 < 1 сек        | p95 latency is higher than 1 second for 1 minute |
+| Reliability | 5xx / total                    | error rate < 1%    | 5xx error rate is higher than 1% for 2 minutes   |
+| Availability| up{job="ml_service"}           | uptime > 99% / 30d | Service is unavailable for more than 1 minute    |
+```
+
+## 3. Структура
+```text
+project/
+│
+├── app.py
+├── requirements.txt
+├── Dockerfile
+│
+├── docker-compose.monitoring.yml
+├── prometheus.yml
+├── alert_rules.yml
+│
+└── grafana/
+    └── provisioning/
+```
