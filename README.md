@@ -101,7 +101,7 @@ http://localhost:9090/api/v1/targets
 <img width="1090" height="248" alt="image" src="https://github.com/user-attachments/assets/77631fa8-44b2-42b1-b54c-ee97c603326d" />
 
 ---
-
+## 5. Скриншоты Grafana и Prometheus
 ```text
 Grafana Dashboard
 ```
@@ -113,6 +113,7 @@ Grafana Dashboard
 Prometheus
 ```
 <img width="1751" height="561" alt="image" src="https://github.com/user-attachments/assets/a279a996-85d7-42bf-928f-83ad9871b6d3" />
+
 ---
 
 ```text
@@ -120,4 +121,39 @@ Alert
 ```
 <img width="3808" height="1471" alt="alert" src="https://github.com/user-attachments/assets/37c281f2-d956-4055-bc27-ac5b4905f01a" />
 
+## 6. Обнаружить деградацию модели и дрифт
+
+В ходе эксперимента была выполнена проверка модели на наличие деградации и дрифта данных с использованием датасета Wine. В качестве эталонного пакета использовались исходные данные, на которых модель показывала высокое качество классификации. Для имитации data drift распределения нескольких признаков подаваемого в модель пакета данных были искусственно изменены: значения признаков alcohol, malic_acid, color_intensity и proline были масштабированы и смещены относительно эталонного пакета данных. Проведённый KS-тест показал статистически значимое различие распределений между эталонными и текущими данными, что подтверждает наличие дрифта данных. На графиках распределений также видно существенное смещение признаков подаваемого в модель пакета данных относительно эталонного пакета данных. После изменения входных данных наблюдалось снижение точности модели, что свидетельствует о деградации качества модели под влиянием смещение распределения (data drift). Полученные результаты демонстрируют важность мониторинга распределений признаков и качества модели после деплоя ML-системы.
+
+```text
+[1] MODEL QUALITY
+
+Reference Accuracy : 1.0000
+Current Accuracy   : 0.6111
+Accuracy Drop      : 0.3889
+
+```
+---
+
+<img width="710" height="400" alt="image" src="https://github.com/user-attachments/assets/da9053b0-a6f0-42dd-8c66-99195b8a61b5" />
+
+---
+
+```text
+[3] CLASSIFICATION REPORT
+              precision    recall  f1-score   support
+
+           0       0.51      1.00      0.68        18
+           1       0.00      0.00      0.00        21
+           2       0.79      1.00      0.88        15
+
+    accuracy                           0.61        54
+   macro avg       0.43      0.67      0.52        54
+weighted avg       0.39      0.61      0.47        54
+```
+---
+
+<img width="1202" height="852" alt="image" src="https://github.com/user-attachments/assets/715d481a-8f57-4c25-a968-a430a2a9b8ce" />
+
+<img width="456" height="311" alt="image" src="https://github.com/user-attachments/assets/3bc74575-8eb7-4d09-b990-e4766b608a3c" />
 
