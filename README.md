@@ -37,18 +37,19 @@
 
 ## 3. Структура
 ```text
-project/
-│
+hw8_Podogov_Andrey/
 ├── app.py
 ├── requirements.txt
 ├── Dockerfile
-│
-├── docker-compose.monitoring.yml
+├── docker-compose.yml
 ├── prometheus.yml
-├── alert_rules.yml
+├── prometheus
+│   ├── alert_rules.yml
+│ 
+├── drift/
+│   ├── drift.py
 │
-└── grafana/
-    └── provisioning/
+└── README.md
 ```
 
 ## 4. Запуск и проверки
